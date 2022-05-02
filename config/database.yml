@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db_my_freela
+  port: 5432
+  username: my_freela
+  password: my_freela
+
+development:
+  <<: *default
+  database: my_freela_development
+
+test:
+  <<: *default
+  database: my_freela_test
+
+production:
+  <<: *default
+  database: nome_aplicacao_production
+  password: <%= ENV['MY_FREELA_DATABASE_PASSWORD'] %>

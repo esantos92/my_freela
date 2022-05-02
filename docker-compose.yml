@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: db_my_freela
+    image: 'postgres:13.6-alpine'
+    environment:
+      - POSTGRES_DB=my_freela
+      - POSTGRES_USER=my_freela
+      - POSTGRES_PASSWORD=my_freela
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+  
+  app:
+    container_name: app
+    depends_on:
+      - 'postgres'
+    build: .
+    command: bash start
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/my_freela'
+
+volumes:
+  postgres:

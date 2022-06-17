@@ -1,0 +1,14 @@
+@import "materialize";
+@import "material_icons";
+@import "pages";
+@import "./shared/navbar";
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap');
+
+body {
+  background: #5086C1;
+  font-family: 'MuseoModerno', cursive;
+}
+
+header {
+  margin-bottom: 10rem;
+}

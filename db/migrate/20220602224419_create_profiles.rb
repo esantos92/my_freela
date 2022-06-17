@@ -4,8 +4,8 @@ class CreateProfiles < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.float :monthly_budget
       t.float :value_hour
-      t.int :days_per_week
-      t.int :hours_per_day
+      t.integer :days_per_week
+      t.integer :hours_per_day
       t.text :github_profile
 
       t.timestamps
